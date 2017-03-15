@@ -1,0 +1,2 @@
+# INJECT
+Inject module "muse"
