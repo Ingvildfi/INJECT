@@ -8,7 +8,7 @@
         $feeds = array(
             "http://www.bt.no/rss",
             "http://www.aftenposten.no/rss",
-            "https://twitrss.me/twitter_user_to_rss/?user=ingvildf"
+            "https://twitrss.me/twitter_user_to_rss/?user=google"
         );
         
         //Read each feed's items
