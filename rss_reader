@@ -6,9 +6,9 @@
         <?php
         //Feed URLs
         $feeds = array(
-            "http://bt.no/rss",
-            "http://www.engadget.com/rss.xml",
-            "http://www.reddit.com/r/programming/.rss"
+            "http://www.bt.no/rss",
+            "http://www.aftenposten.no/rss",
+            "https://twitrss.me/twitter_user_to_rss/?user=ingvildf"
         );
         
         //Read each feed's items
