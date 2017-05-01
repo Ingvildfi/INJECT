@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="musestyle.css">
-        <title>RSS Feed Reader</title>
+        <link rel="stylesheet" type="text/css" href="uplystyle.css">
+        <title>Uply RSS</title>
     </head>
     <body>
         <?php
-        //Feed URLs
+        //URL strømmer
         $feeds = array(
             "http://www.bt.no/rss",
-            "http://www.aftenposten.no/rss",
-            "https://twitrss.me/twitter_user_to_rss/?user=google"
+            "http://www.nrk.no/nyheter/toppsaker.rss",
+            "https://twitrss.me/twitter_user_to_rss/?user=Hordalandpoliti"
         );
         
-        //Read each feed's items
+        //Leser hvert element i nyhetsstrømmen
         $entries = array();
         foreach($feeds as $feed) {
             $xml = simplexml_load_file($feed);
             $entries = array_merge($entries, $xml->xpath("//item"));
         }
         
-        //Sort feed entries by pubDate
+        //Sorterer innleggene etter publiseringsdato
         usort($entries, function ($feed1, $feed2) {
             return strtotime($feed2->pubDate) - strtotime($feed1->pubDate);
         });
@@ -28,7 +28,7 @@
         ?>
         
         <ul><?php
-        //Print all the entries
+        //Printer alle elementene til en strøm
         foreach($entries as $entry){
             ?>
             <li><a href="<?= $entry->link ?>"><?= $entry->title ?></a> (<?= parse_url($entry->link)['host'] ?>)
